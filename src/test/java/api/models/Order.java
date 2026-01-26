@@ -93,3 +93,4 @@ public class Order {
         this.color = color;
     }
 }
+// Проект Sprint 7: API тесты Яндекс.Самокат

@@ -60,9 +60,20 @@ public class CreateCourierTest {
                 .body("message", equalTo("Недостаточно данных для создания учетной записи"));
     }
 
+    @Test
+    @DisplayName("Проверка создания курьера без пароля")
+    public void courierCreationWithoutPasswordFails() {
+        courier = new Courier("login"+ System.currentTimeMillis(), null, "Иван");
+        Response response = courierClient.create(courier);
+        response.then()
+                .statusCode(400)
+                .body("message", equalTo("Недостаточно данных для создания учетной записи"));
+    }
+
     @Step("Получить ID курьера для последующей очистки")
     private void getCourierIdForCleanup() {
         Response loginResponse = courierClient.login(Courier.getCredentialsFrom(courier));
         courierId = loginResponse.body().path("id");
     }
 }
+// Проект Sprint 7: API тесты Яндекс.Самокат (ещё чуть-чуть и на диплом)

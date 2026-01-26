@@ -44,3 +44,4 @@ public class Courier {
         return new Courier(courier.getLogin(), courier.getPassword(), null);
     }
 }
+// Проект Sprint 7: API тесты Яндекс.Самокат

@@ -18,3 +18,4 @@ public class GetOrdersListTest {
                 .body("orders", notNullValue());
     }
 }
+// Проект Sprint 7: API тесты Яндекс.Самокат (ещё чуть-чуть и на диплом)

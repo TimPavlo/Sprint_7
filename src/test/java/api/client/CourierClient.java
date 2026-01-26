@@ -1,20 +1,20 @@
 package api.client;
 
+import api.ApiConstants;
 import api.models.Courier;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import static io.restassured.RestAssured.given;
 
 public class CourierClient {
-    private static final String BASE_URL = "https://qa-scooter.praktikum-services.ru/";
 
     @Step("Создать нового курьера")
     public Response create(Courier courier) {
         Response response = given()
                 .header("Content-type", "application/json")
-                .baseUri(BASE_URL)
+                .baseUri(ApiConstants.BASE_URL)
                 .body(courier)
-        .when()
+                .when()
                 .post("/api/v1/courier");
         return response;
     }
@@ -23,9 +23,9 @@ public class CourierClient {
     public Response login(Courier creds) {
         Response response = given()
                 .header("Content-type", "application/json")
-                .baseUri(BASE_URL)
+                .baseUri(ApiConstants.BASE_URL)
                 .body(creds)
-        .when()
+                .when()
                 .post("/api/v1/courier/login");
         return response;
     }
@@ -34,9 +34,10 @@ public class CourierClient {
     public Response deleteCourier(int id) {
         Response response = given()
                 .header("Content-type", "application/json")
-                .baseUri(BASE_URL)
-        .when()
+                .baseUri(ApiConstants.BASE_URL)
+                .when()
                 .delete("/api/v1/courier/" + id);
         return response;
     }
 }
+// Проект Sprint 7: API тесты Яндекс.Самокат (ещё чуть-чуть и на диплом)

@@ -80,3 +80,4 @@ public class LoginCourierTest {
                 .body("message", equalTo("Недостаточно данных для входа"));
     }
 }
+// Проект Sprint 7: API тесты Яндекс.Самокат (ещё чуть-чуть и на диплом)

@@ -42,3 +42,5 @@ public class OrderGenerator {
         return getOrderWithColor(null);
     }
 }
+
+// Проект Sprint 7: API тесты Яндекс.Самокат
